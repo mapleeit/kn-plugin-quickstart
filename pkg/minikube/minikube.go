@@ -71,9 +71,6 @@ func SetUp(name, kVersion string) error {
 	if err := install.KourierMinikube(); err != nil {
 		return fmt.Errorf("configure kourier: %w", err)
 	}
-	if err := install.Eventing(); err != nil {
-		return fmt.Errorf("install eventing: %w", err)
-	}
 
 	finish := time.Since(start).Round(time.Second)
 	fmt.Printf("🚀 Knative install took: %s \n", finish)
